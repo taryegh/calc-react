@@ -6,6 +6,7 @@ export default function Label() {
     <div className="label">
       <div className='citizen'>citizen</div>
       <div className='model'>lh-700</div>
+      <div className='solar'></div>
     </div>
   );
 }

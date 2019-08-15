@@ -13,4 +13,9 @@
   margin-right: 5px;
   border-radius: 4px;
   font-family: 'Electrolize', sans-serif;
+  cursor: pointer;
+}
+
+.clear-btn:hover{
+  background-color: #e74c3c;
 }

@@ -4,7 +4,8 @@ import Button from "./components/Button";
 import Input from "./components/Input";
 import Label from "./components/Label";
 import ClearButton from "./components/ClearButton";
-import * as math from "mathjs";
+import * as mat from "mathjs";
+import Beta from "./components/Beta";
 
 class App extends Component {
   state = {
@@ -17,6 +18,18 @@ class App extends Component {
 
   handleEqual = () => {
     this.setState({ input: eval(this.state.input) });
+  };
+
+  handleSQRT = () => {
+    this.setState({ input: Math.sqrt(+this.state.input) });
+  };
+
+  handlePercent = () => {
+    this.setState({ input: +this.state.input / 100 });
+  };
+
+  handleNone = () => {
+    console.log(null);
   };
 
   render() {
@@ -32,23 +45,13 @@ class App extends Component {
             </Button>
 
             {/* SQRT */}
-            <Button
-              handleClick={this.handleClick}
-              value={`sqrt(${this.state.input})`}
-            >
-              √
-            </Button>
+            <Button handleClick={this.handleSQRT}>√</Button>
 
             {/* MU */}
-            <Button>MU</Button>
+            <Button handleClick={this.handleNone}>MU</Button>
 
             {/* % */}
-            <Button
-              handleClick={this.handleClick}
-              value={`${this.state.input} percent`}
-            >
-              %
-            </Button>
+            <Button handleClick={this.handlePercent}>%</Button>
 
             {/* ON */}
             <ClearButton handleClear={() => this.setState({ input: "" })}>
@@ -88,10 +91,10 @@ class App extends Component {
             <Button handleClick={this.handleClick} value="6">
               6
             </Button>
-            <Button handleClick={this.handleClick} value="6">
+            <Button handleClick={this.handleClick} value="-">
               -
             </Button>
-            <Button>MR</Button>
+            <Button handleClick={this.handleNone}>MR</Button>
           </div>
           <div className="row">
             <Button handleClick={this.handleClick} value="1">
@@ -106,7 +109,7 @@ class App extends Component {
             <Button handleClick={this.handleClick} value="+">
               +
             </Button>
-            <Button>M-</Button>
+            <Button handleClick={this.handleNone}>M-</Button>
           </div>
           <div className="row">
             <Button handleClick={this.handleClick} value="0">
@@ -119,9 +122,11 @@ class App extends Component {
             <Button handleClick={this.handleClick} value="+">
               +
             </Button>
-            <Button>M+</Button>
+            <Button handleClick={this.handleNone}>M+</Button>
           </div>
         </div>
+        <br />
+        <Beta />
       </div>
     );
   }

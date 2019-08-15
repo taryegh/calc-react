@@ -13,8 +13,13 @@
   margin-right: 5px;
   border-radius: 4px;
   font-family: 'Electrolize', sans-serif;
+  cursor: pointer;
 }
 
 .operator {
   background-color: #dfe6e9;
+}
+
+.button-wrapper:hover {
+  background-color: #60a3bc;
 }
