@@ -1,0 +1,130 @@
+import React, { Component } from "react";
+import "./App.css";
+import Button from "./components/Button";
+import Input from "./components/Input";
+import Label from "./components/Label";
+import ClearButton from "./components/ClearButton";
+import * as math from "mathjs";
+
+class App extends Component {
+  state = {
+    input: ""
+  };
+
+  handleClick = val => {
+    this.setState({ input: this.state.input + val });
+  };
+
+  handleEqual = () => {
+    this.setState({ input: eval(this.state.input) });
+  };
+
+  render() {
+    return (
+      <div className="app">
+        <div className="calc-wrapper">
+          <Input input={this.state.input} />
+          <Label />
+          <div className="row">
+            {/* MINUS */}
+            <Button handleClick={this.handleClick} value="-">
+              +-
+            </Button>
+
+            {/* SQRT */}
+            <Button
+              handleClick={this.handleClick}
+              value={`sqrt(${this.state.input})`}
+            >
+              √
+            </Button>
+
+            {/* MU */}
+            <Button>MU</Button>
+
+            {/* % */}
+            <Button
+              handleClick={this.handleClick}
+              value={`${this.state.input} percent`}
+            >
+              %
+            </Button>
+
+            {/* ON */}
+            <ClearButton handleClear={() => this.setState({ input: "" })}>
+              ON
+            </ClearButton>
+          </div>
+
+          <div className="row">
+            <Button handleClick={this.handleClick} value="7">
+              7
+            </Button>
+            <Button handleClick={this.handleClick} value="8">
+              8
+            </Button>
+            <Button handleClick={this.handleClick} value="9">
+              9
+            </Button>
+
+            {/* MUL */}
+            <Button handleClick={this.handleClick} value="*">
+              X
+            </Button>
+
+            {/* DIVISION */}
+            <Button handleClick={this.handleClick} value="/">
+              ÷
+            </Button>
+          </div>
+
+          <div className="row">
+            <Button handleClick={this.handleClick} value="4">
+              4
+            </Button>
+            <Button handleClick={this.handleClick} value="5">
+              5
+            </Button>
+            <Button handleClick={this.handleClick} value="6">
+              6
+            </Button>
+            <Button handleClick={this.handleClick} value="6">
+              -
+            </Button>
+            <Button>MR</Button>
+          </div>
+          <div className="row">
+            <Button handleClick={this.handleClick} value="1">
+              1
+            </Button>
+            <Button handleClick={this.handleClick} value="2">
+              2
+            </Button>
+            <Button handleClick={this.handleClick} value="3">
+              3
+            </Button>
+            <Button handleClick={this.handleClick} value="+">
+              +
+            </Button>
+            <Button>M-</Button>
+          </div>
+          <div className="row">
+            <Button handleClick={this.handleClick} value="0">
+              0
+            </Button>
+            <Button handleClick={this.handleClick} value=".">
+              .
+            </Button>
+            <Button handleClick={() => this.handleEqual()}>=</Button>
+            <Button handleClick={this.handleClick} value="+">
+              +
+            </Button>
+            <Button>M+</Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;

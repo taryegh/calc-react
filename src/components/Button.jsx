@@ -11,7 +11,7 @@ export default function Button(props) {
       className={`button-wrapper ${
         isOperator(props.children) ? null : "operator"
       }`}
-      onClick={() => props.handleClick(props.children)}
+      onClick={() => props.handleClick(props.value)}
     >
       {props.children}
     </div>

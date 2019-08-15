@@ -4,11 +4,16 @@
   align-items: center;
   height: 100vh;
   width: 100%;
+  background-color: #34495e;
 }
 
 .calc-wrapper {
-  width: 400px;
-  height: 600px;
+  width: 330px;
+  height: 580px;
+  padding: 25px;
+  background-color: #c3c9ce;
+  border: 4px solid #2f3542;
+  border-radius: 4px;
 }
 
 .row {
