@@ -19,3 +19,9 @@
 .clear-btn:hover{
   background-color: #e74c3c;
 }
+
+.clear-btn:active {
+  background-color: #e74c3c;
+  box-shadow: 0 4px #222f3e;
+  transform: translateY(3px);
+}
